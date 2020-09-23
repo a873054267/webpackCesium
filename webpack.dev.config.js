@@ -13,6 +13,12 @@ module.exports = {
     
     index: "./src/index.js",
   },
+  resolve: {
+        alias: {
+            // Cesium模块名称
+            cesium: path.resolve(__dirname, cesiumSource),
+        },
+    },
   output: {
     filename: (chunkData) => {
       let chunkName = chunkData.chunk.name;

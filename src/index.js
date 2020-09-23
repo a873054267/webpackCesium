@@ -1,9 +1,33 @@
-console.log(111)
-// var viewer = new Cesium.Viewer('cesiumContainer', {
-    
-//     baseLayerPicker: false,
-// });
+// import('Widgets/widgets.css');
+import Viewer from '../cesium/Source/Widgets/Viewer/Viewer'
+var viewer = new Viewer('cesiumContainer', {
 
+    baseLayerPicker: false,
+    homeButton: false,
+    animation: true,
+    geocoder: false,
+    timeline: false,
+    selectionIndicator: false,
+    sceneModePicker: false,
+    navigationHelpButton: false,
+    infoBox: false,
+    shouldAnimate: false,
+    fullscreenButton: false,
+    projectionPicker: false,
+    useDefaultRenderLoop: true,
+    requestRenderMode: true,
+    maximumRenderTimeChange: Infinity,
+    contextOptions: {
+        requestWebgl2 : true,
+        webgl: {
+            antialias: true,
+            // preserveDrawingBuffer: true
+        }
+    }
+});
+// 去掉cesium图标
+viewer._cesiumWidget._creditContainer.style.display = 'none';
+window.viewer=viewer
 // var scene = viewer.scene;
 // var primitives = scene.primitives;
 // var camera = scene.camera;
